@@ -3,8 +3,11 @@ from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage
 from langchain_openai import AzureChatOpenAI
 from langchain.tools import tool
+from tavily import TavilyClient
 
 load_dotenv()
+
+tavily = TavilyClient()
 
 @tool
 def search(query: str) -> str:
@@ -17,7 +20,7 @@ def search(query: str) -> str:
   """
   print("Searching over the Internet")
 
-  return "Bangalore Weather is Sunny"
+  return tavily.search(query=query)
 
 
 llm = AzureChatOpenAI(azure_deployment="gpt-4o")
