@@ -29,7 +29,7 @@ agent = create_agent(model = llm, tools = tools)
 
 def main():
   print("Hello from langchian")
-  result = agent.invoke({"messages":HumanMessage(content="What is Weather in Banglore")})
+  result = agent.invoke({"messages":HumanMessage(content="search for 3 recent job postings for gen AI Engineer with 3 years of Experience in Banglore region")})
   print(result)
 
 if __name__ == "__main__":
