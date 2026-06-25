@@ -17,7 +17,7 @@ def search(query: str) -> str:
   """
   print("Searching over the Internet")
 
-  return "Bangalore Weather is Annoying"
+  return "Bangalore Weather is Sunny"
 
 
 llm = AzureChatOpenAI(azure_deployment="gpt-4o")
